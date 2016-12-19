@@ -13,4 +13,10 @@ public class LoginController {
     String home() {
         return "Hello World!";
     }
+
+    @RequestMapping(value="/user")
+//    @ResponseBody
+    String user() {
+        return "Hello user";
+    }
 }
