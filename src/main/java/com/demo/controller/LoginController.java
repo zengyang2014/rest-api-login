@@ -1,8 +1,7 @@
 package com.demo.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import com.demo.User;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/")
@@ -14,9 +13,16 @@ public class LoginController {
         return "Hello World!";
     }
 
-    @RequestMapping(value="/user")
-//    @ResponseBody
-    String user() {
-        return "Hello user";
+    @RequestMapping(value="/login", consumes = {"application/json"}, method = RequestMethod.POST)
+    @ResponseBody
+    String user(@RequestBody User user) {
+        if(user.checkUser())
+        {
+            return "login success";
+        }
+        else
+        {
+            return "login fail";
+        }
     }
 }
