@@ -7,15 +7,15 @@ public class User {
     private static final String USERNAME = "admin";
     private static final String PASSWORD = "123456";
 
-    private String name;
+    private String username;
     private String password;
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -30,15 +30,17 @@ public class User {
 
     }
 
-    User (String name, String password)
+    User (String username, String password)
     {
-        this.name = name;
+        this.username = username;
         this.password = password;
     }
 
     public Boolean checkUser()
     {
 //        return true;
-        return name.equals(USERNAME) && password.equals(PASSWORD);
+        System.out.println(username);
+        System.out.println(password);
+        return username.equals(USERNAME) && password.equals(PASSWORD);
     }
 }
