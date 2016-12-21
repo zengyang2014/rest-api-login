@@ -36,7 +36,7 @@ public class User {
         this.password = password;
     }
 
-    public Boolean checkUser()
+    public Boolean isValid()
     {
 //        return true;
         System.out.println(username);

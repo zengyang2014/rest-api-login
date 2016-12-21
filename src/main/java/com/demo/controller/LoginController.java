@@ -13,6 +13,9 @@ import javax.validation.Valid;
 @RequestMapping("/")
 public class LoginController {
 
+    private static final Integer LOGIN_SUCCESS = 0;
+    private static final Integer LOGIN_FAIL = 1;
+
     @RequestMapping("/")
     @ResponseBody
     String home() {
@@ -23,13 +26,13 @@ public class LoginController {
     @ResponseBody
     public HttpEntity<Result> userLogin(@RequestBody @Valid User user) {
 
-        if(user.checkUser())
+        if(user.isValid())
         {
-            return new ResponseEntity<Result>(new Result(0, "NULL"), HttpStatus.OK);
+            return new ResponseEntity<Result>(new Result(LOGIN_SUCCESS, "NULL"), HttpStatus.OK);
         }
         else
         {
-            return new ResponseEntity<Result>(new Result(1, "Login Fail, password or ID is not correct."), HttpStatus.OK);
+            return new ResponseEntity<Result>(new Result(LOGIN_FAIL, "Login Fail, password or ID is not correct."), HttpStatus.OK);
         }
 
     }

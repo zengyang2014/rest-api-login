@@ -7,7 +7,7 @@ public class Result {
     private int status;
     private String erroMsg;
 
-    public Result(int status, String erroMsg) {
+    public Result(Integer status, String erroMsg) {
         this.status = status;
         this.erroMsg = erroMsg;
     }
