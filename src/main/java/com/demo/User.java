@@ -38,9 +38,6 @@ public class User {
 
     public Boolean isValid()
     {
-//        return true;
-        System.out.println(username);
-        System.out.println(password);
-        return username.equals(USERNAME) && password.equals(PASSWORD);
+        return USERNAME.equals(username) && PASSWORD.equals(password);
     }
 }
