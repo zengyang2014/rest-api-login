@@ -7,11 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user")
 public class User {
-//    private static final String USERNAME = "admin";
-//    private static final String PASSWORD = "123456";
-
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idUser;
