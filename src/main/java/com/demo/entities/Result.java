@@ -1,4 +1,4 @@
-package com.demo;
+package com.demo.entities;
 
 /**
  * Created by yzeng on 21/12/2016.
